@@ -1,0 +1,7 @@
+{
+  "name": "assetflow",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

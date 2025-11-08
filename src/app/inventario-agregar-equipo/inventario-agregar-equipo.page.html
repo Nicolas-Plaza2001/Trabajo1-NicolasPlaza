@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/logo.png" alt="AssetFlow" class="logo" />
+    </ion-buttons>
+    <ion-title>AssetFlow</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" fill="outline" (click)="logout()">Cerrar sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <h2 class="titulo-bienvenida">Ingrese los datos del equipo</h2>
+
+  <div class="input-section">
+    <ion-input
+      placeholder="Ingrese el código del equipo"
+      [(ngModel)]="codigo"
+      type="text">
+    </ion-input>
+
+    <ion-input
+      placeholder="Ingrese el serial del equipo"
+      [(ngModel)]="serial"
+      type="text">
+    </ion-input>
+
+    <ion-input
+      placeholder="Ingrese el modelo"
+      [(ngModel)]="modelo"
+      type="text">
+    </ion-input>
+
+    <ion-input
+      placeholder="Ingrese el CPU"
+      [(ngModel)]="cpu"
+      type="text">
+    </ion-input>
+
+    <ion-input
+      placeholder="Ingrese la RAM"
+      [(ngModel)]="ram"
+      type="text">
+    </ion-input>
+
+    <ion-input
+      placeholder="Ingrese el almacenamiento"
+      [(ngModel)]="almacenamiento"
+      type="text">
+    </ion-input>
+
+    <ion-button expand="block" color="primary" (click)="generarQR()">
+      Generar QR
+    </ion-button>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="footer-tabs">
+        <ion-col (click)="router.navigate(['/dashboard'])" class="footer-tab">
+          <img src="assets/icons/home.png" alt="Inicio" class="footer-icon" />
+          <ion-label>Inicio</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/gestion'])" class="footer-tab">
+          <img src="assets/icons/gestion.png" alt="Gestión" class="footer-icon" />
+          <ion-label>Gestión</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/buscar'])" class="footer-tab">
+          <img src="assets/icons/buscar.png" alt="Buscar" class="footer-icon" />
+          <ion-label>Buscar</ion-label>
+        </ion-col>
+
+        <ion-col class="footer-tab selected">
+          <img src="assets/icons/inventario.png" alt="Inventario" class="footer-icon" />
+          <ion-label>Inventario</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/perfil'])" class="footer-tab">
+          <img src="assets/icons/perfil.png" alt="Perfil" class="footer-icon" />
+          <ion-label>Perfil</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,76 @@
+.logo {
+  width: 40px;
+  height: auto;
+  margin-left: 8px;
+}
+
+.titulo-bienvenida,
+.titulo-seccion {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.tabla-seccion {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.tabla-seccion h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #3a3a91;
+  margin-bottom: 8px;
+}
+
+.tabla {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  background-color: #f3f3f3;
+  color: #333;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+ion-footer {
+  --background: #fff;
+  border-top: 1px solid #e0e0e0;
+}
+
+ion-tab-bar {
+  --background: #ffffff;
+  --color-selected: #3a3a91;
+}
+
+ion-button {
+  text-transform: none;
+}
+
+.alert-wrapper {
+  border-radius: 12px !important;
+}
+
+.boton-buscar {
+  margin-top: 12px;
+}
+
+.botones-acciones {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}

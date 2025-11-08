@@ -1,0 +1,89 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/logo.png" alt="AssetFlow" class="logo" />
+    </ion-buttons>
+    <ion-title>AssetFlow</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" fill="outline" (click)="logout()">Cerrar sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <h2 class="titulo-bienvenida">Bienvenido de vuelta!</h2>
+
+  <div class="tabla-seccion">
+    <h3>Últimos equipos asignados</h3>
+    <div class="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th>Código de equipo</th>
+            <th>Asignado a</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let eq of equiposAsignados">
+            <td>{{ eq.codigo }}</td>
+            <td>{{ eq.asignadoA }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tabla-seccion">
+    <h3>Últimos equipos devueltos</h3>
+    <div class="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th>Código de equipo</th>
+            <th>Devuelto de</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let eq of equiposDevueltos">
+            <td>{{ eq.codigo }}</td>
+            <td>{{ eq.devueltoDe }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="footer-tabs">
+        <ion-col class="footer-tab selected">
+          <img src="assets/icons/home.png" alt="Inicio" class="footer-icon" />
+          <ion-label>Inicio</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/gestion'])" class="footer-tab">
+          <img src="assets/icons/gestion.png" alt="Gestión" class="footer-icon" />
+          <ion-label>Gestión</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/buscar'])" class="footer-tab">
+          <img src="assets/icons/buscar.png" alt="Buscar" class="footer-icon" />
+          <ion-label>Buscar</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/inventario'])" class="footer-tab">
+          <img src="assets/icons/inventario.png" alt="Inventario" class="footer-icon" />
+          <ion-label>Inventario</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/perfil'])" class="footer-tab">
+          <img src="assets/icons/perfil.png" alt="Perfil" class="footer-icon" />
+          <ion-label>Perfil</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
+

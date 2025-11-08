@@ -1,0 +1,96 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-img src="assets/logo.png" style="height: 40px;"></ion-img>
+    </ion-buttons>
+    <ion-title>AssetFlow</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" fill="outline" (click)="logout()">Cerrar sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <h2 class="titulo-bienvenida">Apunte la cámara al código QR del equipo a devolver</h2>
+
+  <div class="qr-demo">
+    <ion-img src="assets/qr-demo.png"></ion-img>
+  </div>
+
+  <h3>Detalles del Equipo</h3>
+  <div class="tabla">
+    <table>
+      <thead>
+        <tr>
+          <th>Código de Equipo</th>
+          <th>Serial</th>
+          <th>Modelo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eq of equipo">
+          <td>{{ eq.codigo }}</td>
+          <td>{{ eq.serial }}</td>
+          <td>{{ eq.modelo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Colaborador</h3>
+  <div class="tabla">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Departamento</th>
+          <th>Correo Corporativo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let col of colaborador">
+          <td>{{ col.nombre }}</td>
+          <td>{{ col.departamento }}</td>
+          <td>{{ col.correo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ion-button expand="block" color="primary" class="ion-margin-top" (click)="devolver()">
+    Devolver
+  </ion-button>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="footer-tabs">
+        <ion-col (click)="router.navigate(['/dashboard'])" class="footer-tab">
+          <img src="assets/icons/home.png" alt="Inicio" class="footer-icon" />
+          <ion-label>Inicio</ion-label>
+        </ion-col>
+
+        <ion-col class="footer-tab selected">
+          <img src="assets/icons/gestion.png" alt="Gestión" class="footer-icon" />
+          <ion-label>Gestión</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/buscar'])" class="footer-tab">
+          <img src="assets/icons/buscar.png" alt="Buscar" class="footer-icon" />
+          <ion-label>Buscar</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/inventario'])" class="footer-tab">
+          <img src="assets/icons/inventario.png" alt="Inventario" class="footer-icon" />
+          <ion-label>Inventario</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/perfil'])" class="footer-tab">
+          <img src="assets/icons/perfil.png" alt="Perfil" class="footer-icon" />
+          <ion-label>Perfil</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

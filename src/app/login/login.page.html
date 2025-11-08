@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="light">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="assets/logo.png" alt="AssetFlow" class="logo" />
+  </div>
+
+  <!-- Título -->
+  <h1 class="title">Inicio de Sesión</h1>
+
+  <!-- Formulario -->
+  <form>
+    <ion-item lines="full" class="input-item">
+      <ion-label position="stacked">correo electrónico</ion-label>
+      <ion-input
+        type="email"
+        placeholder="assets@empresa.com"
+        name="email">
+      </ion-input>
+    </ion-item>
+
+    <ion-item lines="full" class="input-item">
+      <ion-label position="stacked">contraseña</ion-label>
+      <ion-input
+        type="password"
+        placeholder="tu contraseña"
+        name="password">
+      </ion-input>
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      color="primary"
+      class="login-button"
+      [routerLink]="['/dashboard']">
+      Iniciar sesión
+    </ion-button>
+  </form>
+
+  <!-- Enlace recuperar contraseña -->
+  <div class="forgot-container">
+    <a href="#" class="forgot-link">¿Olvidaste la contraseña?</a>
+  </div>
+
+</ion-content>

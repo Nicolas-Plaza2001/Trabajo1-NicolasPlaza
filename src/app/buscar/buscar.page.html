@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/logo.png" class="logo" />
+    </ion-buttons>
+    <ion-title>Buscar</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" fill="outline" (click)="logout()">Cerrar sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Código del equipo</ion-label>
+    <ion-input [(ngModel)]="codigoBusqueda"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" color="primary" class="ion-margin-top" (click)="buscar()">
+    Buscar
+  </ion-button>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="footer-tabs">
+        <ion-col (click)="router.navigate(['/dashboard'])" class="footer-tab">
+          <img src="assets/icons/home.png" alt="Inicio" class="footer-icon" />
+          <ion-label>Inicio</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/gestion'])" class="footer-tab">
+          <img src="assets/icons/gestion.png" alt="Gestión" class="footer-icon" />
+          <ion-label>Gestión</ion-label>
+        </ion-col>
+
+        <ion-col class="footer-tab selected">
+          <img src="assets/icons/buscar.png" alt="Buscar" class="footer-icon" />
+          <ion-label>Buscar</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/inventario'])" class="footer-tab">
+          <img src="assets/icons/inventario.png" alt="Inventario" class="footer-icon" />
+          <ion-label>Inventario</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/perfil'])" class="footer-tab">
+          <img src="assets/icons/perfil.png" alt="Perfil" class="footer-icon" />
+          <ion-label>Perfil</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
+
+

@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/logo.png" alt="AssetFlow" class="logo" />
+    </ion-buttons>
+    <ion-title>Inventario</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" fill="outline" (click)="logout()">Cerrar sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <h2 class="titulo-bienvenida">Gestión de Inventario</h2>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <ion-button expand="block" color="success" (click)="goToAgregarEquipo()">Agregar Equipo</ion-button>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <ion-button expand="block" color="success" (click)="goToAgregarEmpleado()">Agregar Empleado</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <ion-button expand="block" color="warning" (click)="goToActualizarEquipo()">Actualizar Equipo</ion-button>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <ion-button expand="block" color="warning" (click)="goToActualizarEmpleado()">Actualizar Empleado</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <ion-button expand="block" color="danger" (click)="goToEliminarEquipo()">Eliminar Equipo</ion-button>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <ion-button expand="block" color="danger" (click)="goToEliminarEmpleado()">Eliminar Empleado</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="tabla-seccion">
+    <h3>Historial de acciones recientes</h3>
+    <div class="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th>Acción</th>
+            <th>Código de Equipo</th>
+            <th>Empleado</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of historialAcciones">
+            <td>{{ item.accion }}</td>
+            <td>{{ item.codigo }}</td>
+            <td>{{ item.empleado }}</td>
+            <td>{{ item.fecha }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="footer-tabs">
+        <ion-col (click)="router.navigate(['/dashboard'])" class="footer-tab">
+          <img src="assets/icons/home.png" alt="Inicio" class="footer-icon" />
+          <ion-label>Inicio</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/gestion'])" class="footer-tab">
+          <img src="assets/icons/gestion.png" alt="Gestión" class="footer-icon" />
+          <ion-label>Gestión</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/buscar'])" class="footer-tab">
+          <img src="assets/icons/buscar.png" alt="Buscar" class="footer-icon" />
+          <ion-label>Buscar</ion-label>
+        </ion-col>
+
+        <ion-col class="footer-tab selected">
+          <img src="assets/icons/inventario.png" alt="Inventario" class="footer-icon" />
+          <ion-label>Inventario</ion-label>
+        </ion-col>
+
+        <ion-col (click)="router.navigate(['/perfil'])" class="footer-tab">
+          <img src="assets/icons/perfil.png" alt="Perfil" class="footer-icon" />
+          <ion-label>Perfil</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

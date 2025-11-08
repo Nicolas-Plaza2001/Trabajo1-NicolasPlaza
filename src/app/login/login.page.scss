@@ -1,0 +1,122 @@
+/* Logo en el header */
+.logo {
+  width: 40px;
+  height: auto;
+  margin-left: 8px;
+}
+
+/* Título principal o bienvenida */
+.titulo-bienvenida, h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Sección de tabla / historial */
+.tabla-seccion {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.tabla-seccion h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #3a3a91;
+  margin-bottom: 8px;
+}
+
+/* Tabla responsive */
+.tabla {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  background-color: #f3f3f3;
+  color: #333;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+/* Colores por estado */
+.asignado {
+  color: green;
+  font-weight: 500;
+}
+
+.devuelto {
+  color: red;
+  font-weight: 500;
+}
+
+/* Botones */
+ion-button {
+  text-transform: none;
+  font-size: 16px;
+  height: 50px;
+  --border-radius: 8px;
+}
+
+/* Footer / Tabs */
+ion-footer {
+  --background: #fff;
+  border-top: 1px solid #e0e0e0;
+}
+
+ion-tab-bar {
+  --background: #ffffff;
+  --color-selected: #3a3a91;
+}
+
+/* Alertas */
+.alert-wrapper {
+  border-radius: 12px !important;
+}
+
+/* Contenido general */
+ion-content {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  background-color: #f8f9fa;
+}
+
+/* Espaciado entre botones */
+ion-row.ion-margin-vertical {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Tabla tipo ion-grid (opcional si usas ion-grid) */
+ion-grid {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 10px;
+}
+
+ion-row:first-child {
+  font-weight: bold;
+  color: #222;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+ion-row:not(:first-child) {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}

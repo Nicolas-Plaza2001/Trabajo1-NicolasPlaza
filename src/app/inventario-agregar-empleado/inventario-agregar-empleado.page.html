@@ -28,6 +28,11 @@
   <ion-button expand="block" color="primary" (click)="generarQR()">
     Generar QR
   </ion-button>
+
+  <div class="tabla-seccion" *ngIf="historialAcciones.length > 0">
+    <h3>Historial de acciones recientes</h3>
+    <historial-table [data]="historialAcciones"></historial-table>
+  </div>
 </ion-content>
 
 <ion-footer>
@@ -62,4 +67,3 @@
     </ion-grid>
   </ion-toolbar>
 </ion-footer>
-

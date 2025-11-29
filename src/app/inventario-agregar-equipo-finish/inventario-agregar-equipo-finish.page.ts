@@ -11,9 +11,15 @@ import { CommonModule } from '@angular/common';
   imports: [IonicModule, CommonModule]
 })
 export class InventarioAgregarEquipoFinishPage {
-  public codigoEquipo: string = 'TC-0001'; // ejemplo de código
+  public codigoEquipo: string = '';
 
-  constructor(public router: Router) {}
+  constructor(public router: Router) {
+    // Recuperar código enviado por navegación
+    const nav = this.router.getCurrentNavigation();
+    if (nav?.extras.state && nav.extras.state['codigoEquipo']) {
+      this.codigoEquipo = nav.extras.state['codigoEquipo'];
+    }
+  }
 
   finalizar() {
     this.router.navigate(['/inventario']);

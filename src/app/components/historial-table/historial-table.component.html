@@ -1,0 +1,13 @@
+<ion-grid>
+  <ion-row class="header">
+    <ion-col><strong>Código</strong></ion-col>
+    <ion-col><strong>Asignado a</strong></ion-col>
+    <ion-col><strong>Estado</strong></ion-col>
+  </ion-row>
+
+  <ion-row *ngFor="let item of data">
+    <ion-col>{{ item.codigo }}</ion-col>
+    <ion-col>{{ item.asignado || '—' }}</ion-col>
+    <ion-col>{{ item.estado }}</ion-col>
+  </ion-row>
+</ion-grid>

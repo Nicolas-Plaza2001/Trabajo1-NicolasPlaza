@@ -4,6 +4,8 @@ import { IonicModule, AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { ActivoService } from '../services/activo';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
@@ -12,17 +14,20 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, IonicModule, FormsModule]
 })
 export class DashboardPage {
-  equiposAsignados = [
-    { codigo: 'TC-00001', asignadoA: 'Juan Pérez' },
-    { codigo: 'TC-00002', asignadoA: 'María López' },
-  ];
+  equiposAsignados: { codigo: string; asignadoA: string }[] = [];
+  equiposDevueltos: { codigo: string; devueltoDe: string }[] = [];
 
-  equiposDevueltos = [
-    { codigo: 'TC-00003', devueltoDe: 'Carlos Soto' },
-    { codigo: 'TC-00004', devueltoDe: 'Ana Torres' },
-  ];
+  constructor(public router: Router, private alertController: AlertController, private activoService: ActivoService) {}
 
-  constructor(public router: Router, private alertController: AlertController) {}
+  ngOnInit() {
+    this.activoService.historial$.subscribe(h => {
+      const asignados = h.filter(x => x.estado === 'Asignado');
+      const devueltos = h.filter(x => x.estado === 'Devuelto');
+
+      this.equiposAsignados = asignados.slice(0, 5).map(a => ({ codigo: a.codigo, asignadoA: a.asignado || '—' }));
+      this.equiposDevueltos = devueltos.slice(0, 5).map(d => ({ codigo: d.codigo, devueltoDe: d.asignado || '—' }));
+    });
+  }
 
   async logout() {
     const alert = await this.alertController.create({

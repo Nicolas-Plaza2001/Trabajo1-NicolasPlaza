@@ -18,48 +18,14 @@
     <ion-button expand="block" (click)="buscar()">Buscar</ion-button>
   </div>
 
-  <div class="tabla-seccion">
+  <div class="tabla-seccion" *ngIf="equipos.length > 0">
     <h3>Equipos encontrados</h3>
-    <div class="tabla">
-      <table>
-        <thead>
-          <tr>
-            <th>Código de equipo</th>
-            <th>Serial del equipo</th>
-            <th>Modelo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let eq of equipos">
-            <td>{{ eq.codigo }}</td>
-            <td>{{ eq.serial }}</td>
-            <td>{{ eq.modelo }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <historial-table [data]="equipos"></historial-table>
   </div>
 
-  <div class="tabla-seccion">
+  <div class="tabla-seccion" *ngIf="colaboradores.length > 0">
     <h3>Colaboradores</h3>
-    <div class="tabla">
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre del colaborador</th>
-            <th>Departamento</th>
-            <th>Correo corporativo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let col of colaboradores">
-            <td>{{ col.nombre }}</td>
-            <td>{{ col.departamento }}</td>
-            <td>{{ col.correo }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <historial-table [data]="colaboradores"></historial-table>
   </div>
 </ion-content>
 

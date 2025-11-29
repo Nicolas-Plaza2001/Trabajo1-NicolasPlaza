@@ -34,10 +34,6 @@ export const routes: Routes = [
     loadComponent: () => import('./gestion-asignar/gestion-asignar.page').then( m => m.GestionAsignarPage)
   },
   {
-    path: 'gestion-asignar-finish',
-    loadComponent: () => import('./gestion-asignar-finish/gestion-asignar-finish.page').then( m => m.GestionAsignarFinishPage)
-  },
-  {
     path: 'gestion-devolver',
     loadComponent: () => import('./gestion-devolver/gestion-devolver.page').then(m => m.GestionDevolverPage)
   },

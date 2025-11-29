@@ -11,6 +11,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
+
   <h2 class="titulo-bienvenida">Gestión</h2>
 
   <ion-row class="ion-margin-vertical">
@@ -22,25 +23,18 @@
     </ion-col>
   </ion-row>
 
-  <h3>Historial</h3>
-  <div class="tabla">
-    <table>
-      <thead>
-        <tr>
-          <th>Código de Equipo</th>
-          <th>Asignado a</th>
-          <th>Estado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of historial">
-          <td>{{ item.codigo }}</td>
-          <td>{{ item.asignado }}</td>
-          <td>{{ item.estado }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="ion-margin-vertical">
+    <activo-card
+      *ngFor="let item of historial"
+      [codigo]="item.codigo"
+      [asignado]="item.asignado"
+      [estado]="item.estado"
+    ></activo-card>
   </div>
+
+  <h3>Historial</h3>
+  <historial-table [data]="historial"></historial-table>
+
 </ion-content>
 
 <ion-footer>
@@ -48,27 +42,27 @@
     <ion-grid>
       <ion-row class="footer-tabs">
         <ion-col (click)="router.navigate(['/dashboard'])" class="footer-tab">
-          <img src="assets/icons/home.png" alt="Inicio" class="footer-icon" />
+          <img src="assets/icons/home.png" class="footer-icon" />
           <ion-label>Inicio</ion-label>
         </ion-col>
 
         <ion-col class="footer-tab selected">
-          <img src="assets/icons/gestion.png" alt="Gestión" class="footer-icon" />
+          <img src="assets/icons/gestion.png" class="footer-icon" />
           <ion-label>Gestión</ion-label>
         </ion-col>
 
         <ion-col (click)="router.navigate(['/buscar'])" class="footer-tab">
-          <img src="assets/icons/buscar.png" alt="Buscar" class="footer-icon" />
+          <img src="assets/icons/buscar.png" class="footer-icon" />
           <ion-label>Buscar</ion-label>
         </ion-col>
 
         <ion-col (click)="router.navigate(['/inventario'])" class="footer-tab">
-          <img src="assets/icons/inventario.png" alt="Inventario" class="footer-icon" />
+          <img src="assets/icons/inventario.png" class="footer-icon" />
           <ion-label>Inventario</ion-label>
         </ion-col>
 
         <ion-col (click)="router.navigate(['/perfil'])" class="footer-tab">
-          <img src="assets/icons/perfil.png" alt="Perfil" class="footer-icon" />
+          <img src="assets/icons/perfil.png" class="footer-icon" />
           <ion-label>Perfil</ion-label>
         </ion-col>
       </ion-row>

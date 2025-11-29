@@ -14,45 +14,21 @@
   <h2 class="titulo-bienvenida">Ingrese los datos del equipo</h2>
 
   <div class="input-section">
-    <ion-input
-      placeholder="Ingrese el código del equipo"
-      [(ngModel)]="codigo"
-      type="text">
-    </ion-input>
-
-    <ion-input
-      placeholder="Ingrese el serial del equipo"
-      [(ngModel)]="serial"
-      type="text">
-    </ion-input>
-
-    <ion-input
-      placeholder="Ingrese el modelo del equipo"
-      [(ngModel)]="modelo"
-      type="text">
-    </ion-input>
-
-    <ion-input
-      placeholder="Ingrese el CPU"
-      [(ngModel)]="cpu"
-      type="text">
-    </ion-input>
-
-    <ion-input
-      placeholder="Ingrese la RAM"
-      [(ngModel)]="ram"
-      type="text">
-    </ion-input>
-
-    <ion-input
-      placeholder="Ingrese el almacenamiento"
-      [(ngModel)]="almacenamiento"
-      type="text">
-    </ion-input>
+    <ion-input placeholder="Ingrese el código del equipo" [(ngModel)]="codigo" type="text"></ion-input>
+    <ion-input placeholder="Ingrese el serial del equipo" [(ngModel)]="serial" type="text"></ion-input>
+    <ion-input placeholder="Ingrese el modelo del equipo" [(ngModel)]="modelo" type="text"></ion-input>
+    <ion-input placeholder="Ingrese el CPU" [(ngModel)]="cpu" type="text"></ion-input>
+    <ion-input placeholder="Ingrese la RAM" [(ngModel)]="ram" type="text"></ion-input>
+    <ion-input placeholder="Ingrese el almacenamiento" [(ngModel)]="almacenamiento" type="text"></ion-input>
 
     <ion-button expand="block" color="primary" (click)="actualizarEquipo()">
       Actualizar equipo
     </ion-button>
+  </div>
+
+  <div class="tabla-seccion" *ngIf="historialAcciones.length > 0">
+    <h3>Historial de acciones recientes</h3>
+    <historial-table [data]="historialAcciones"></historial-table>
   </div>
 </ion-content>
 
@@ -88,4 +64,3 @@
     </ion-grid>
   </ion-toolbar>
 </ion-footer>
-

@@ -11,9 +11,15 @@ import { CommonModule } from '@angular/common';
   imports: [IonicModule, CommonModule]
 })
 export class InventarioAgregarEmpleadoFinishPage {
-  public correoEmpleado: string = 'usuario@empresa.com';
+  public correoEmpleado: string = '';
 
-  constructor(public router: Router) {}
+  constructor(public router: Router) {
+    // Recuperar correo enviado por navegación
+    const nav = this.router.getCurrentNavigation();
+    if (nav?.extras.state && nav.extras.state['correoEmpleado']) {
+      this.correoEmpleado = nav.extras.state['correoEmpleado'];
+    }
+  }
 
   finalizar() {
     this.router.navigate(['/inventario']);

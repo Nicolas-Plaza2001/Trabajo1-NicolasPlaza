@@ -24,6 +24,12 @@
       Eliminar equipo
     </ion-button>
   </div>
+
+  <!-- Historial de acciones -->
+  <div class="tabla-seccion" *ngIf="historialAcciones.length > 0">
+    <h3>Historial de acciones recientes</h3>
+    <historial-table [data]="historialAcciones"></historial-table>
+  </div>
 </ion-content>
 
 <ion-footer>

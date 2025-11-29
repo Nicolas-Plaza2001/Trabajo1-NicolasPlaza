@@ -45,26 +45,9 @@
 
   <div class="tabla-seccion">
     <h3>Historial de acciones recientes</h3>
-    <div class="tabla">
-      <table>
-        <thead>
-          <tr>
-            <th>Acción</th>
-            <th>Código de Equipo</th>
-            <th>Empleado</th>
-            <th>Fecha</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of historialAcciones">
-            <td>{{ item.accion }}</td>
-            <td>{{ item.codigo }}</td>
-            <td>{{ item.empleado }}</td>
-            <td>{{ item.fecha }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+
+    <!-- Componente global, igual que en Gestión -->
+    <historial-table [data]="historialAcciones"></historial-table>
   </div>
 
 </ion-content>

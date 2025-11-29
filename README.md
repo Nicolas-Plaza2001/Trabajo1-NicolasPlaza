@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> af1bd3c6c43188690d3a1b17b9623bbdfed17489
 # README - AssetFlow
 
 ## 1\. Descripción del Proyecto
@@ -93,7 +90,6 @@ src/
 
 ## 7\. Principales Problemas y Soluciones
 
-<<<<<<< HEAD
 Durante el desarrollo de AssetFlow surgieron varios desafíos técnicos que permitieron aprender y aplicar buenas prácticas de Ionic y Angular:
 
 Eliminación del uso de servicios para simplificar la lógica:
@@ -142,7 +138,6 @@ Cada uno de estos problemas se solucionó adoptando la estrategia de componentes
   * **Desarrollado por:** Nicolás Plaza
   * **Frameworks utilizados:** Ionic, Angular
 
-=======
 Durante el desarrollo del proyecto surgieron distintos desafíos técnicos que aportaron una comprensión más profunda del entorno Ionic Angular y de las buenas prácticas de desarrollo frontend.
 
   * **Gestión de Componentes Standalone:**
@@ -188,7 +183,6 @@ Durante el desarrollo del proyecto surgieron distintos desafíos técnicos que a
   * **Desarrollado por:** Nicolás Plaza
   * **Frameworks utilizados:** Ionic, Angular
 
->>>>>>> af1bd3c6c43188690d3a1b17b9623bbdfed17489
 ## 11\. Estado del Proyecto
 
 Versión estable y completamente funcional.
@@ -196,8 +190,5 @@ El proyecto puede ejecutarse directamente con el comando:
 
 ```bash
 ionic serve
-<<<<<<< HEAD
+
 ```
-=======
-```
->>>>>>> af1bd3c6c43188690d3a1b17b9623bbdfed17489

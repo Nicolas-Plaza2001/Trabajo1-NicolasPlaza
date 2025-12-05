@@ -115,6 +115,19 @@ Durante el desarrollo del proyecto surgieron distintos desafíos técnicos que a
     Profundizar en el uso de componentes como `ion-grid`, `ion-row`, `ion-col`, `ion-footer` y `ion-tab-bar` fue clave para crear una interfaz adaptable y moderna.
     La práctica constante con estos elementos reforzó la comprensión del diseño responsivo dentro del ecosistema Ionic.
 
+  * **Diferencias visuales entre la versión web y móvil:**
+     Al probar en dispositivo, algunas pantallas se veían distintas respecto a la versión web.
+     La solución fue ajustar tamaños relativos (%, vh, vw), mejorar el uso de `ion-grid` y revisar estilos aplicados por defecto en móviles.
+
+  * **Problemas con dependencias o instalación:**
+     En algunos casos aparecían errores al instalar o sincronizar con Android.
+     Fue necesario revisar versiones en `package.json`, reinstalar módulos y sincronizar correctamente con Capacitor.
+
+* **Configuración de GitHub:**
+    Durante la entrega se trabajó en crear repositorios, cambiar el remoto origin, y subir correctamente los archivos a GitHub.
+    Se hizo uso de comandos como `git remote set-url`, `git add`, `git commit` y `git push` para mantener el repositorio actualizado.
+    
+
 ## 8\. Flujo de Navegación General
 
   * Dashboard → Gestión → (Asignar Activo / Devolver Activo)

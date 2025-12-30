@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> af1bd3c6c43188690d3a1b17b9623bbdfed17489
 # README - AssetFlow
 
 ## 1\. Descripción del Proyecto
@@ -93,56 +90,6 @@ src/
 
 ## 7\. Principales Problemas y Soluciones
 
-<<<<<<< HEAD
-Durante el desarrollo de AssetFlow surgieron varios desafíos técnicos que permitieron aprender y aplicar buenas prácticas de Ionic y Angular:
-
-Eliminación del uso de servicios para simplificar la lógica:
-Inicialmente se intentó usar un servicio ActualizarEmpleado para manejar actualizaciones de empleados y equipos, pero esto generó errores de inyección y dificultades para los tests. La solución fue mover toda la lógica directamente a los componentes, evitando dependencias externas y simplificando la estructura.
-
-Uso de componentes Standalone:
-Al principio se declararon componentes dentro de módulos convencionales (NgModule), lo que provocó errores de compilación y conflictos de importación. La solución fue marcar todos los componentes como standalone: true e importar directamente IonicModule, FormsModule y CommonModule dentro de cada componente. Esto también permitió que cada pantalla funcionara de manera independiente y facilitó la navegación entre ellas.
-
-Problemas con el Router y bindings en templates:
-Algunos errores surgieron al declarar el Router como private dentro de los componentes, lo que impedía utilizar router.navigate desde los archivos HTML. Se corrigió declarando public router: Router para permitir el acceso desde la plantilla y garantizar la navegación fluida.
-
-Manejo de formularios y ngModel:
-Se detectaron errores al enlazar los inputs de los formularios con las variables de los componentes, especialmente al actualizar empleados y equipos. La solución fue asegurar la correcta importación de FormsModule en cada componente standalone y mantener los bindings consistentes en los archivos HTML.
-
-Consistencia visual y uso de footer:
-Al principio, cada pantalla tenía su propio estilo y el footer no reflejaba la pestaña activa correctamente. Se consolidaron los estilos en global.scss y se implementó la lógica para resaltar la pestaña seleccionada, logrando coherencia en toda la aplicación.
-
-Simulación de funcionalidades sin backend:
-Como el proyecto no contaba con un backend real, se optó por simular búsquedas y generación de códigos QR directamente en los componentes, usando arrays de ejemplo y redirecciones a pantallas “finish”. Esto permitió probar la navegación y la lógica de forma funcional sin errores.
-
-Errores y aprendizajes recurrentes:
-
-Intentos de usar servicios que no existían (this.activoService.actualizarEmpleado).
-
-Errores en tests unitarios al intentar inyectar servicios inexistentes.
-
-Necesidad de organizar cada pantalla con .html, .ts y .scss propios para evitar conflictos.
-Cada uno de estos problemas se solucionó adoptando la estrategia de componentes autónomos, importaciones correctas y lógica directamente en el componente.
-## 8\. Flujo de Navegación General
-
-  * Dashboard → Gestión → (Asignar Activo / Devolver Activo)
-  * Gestión → Buscar → Resultado
-  * Gestión → Inventario → (Agregar / Actualizar / Eliminar)
-  * Inventario → Finalización de acciones
-
-## 9\. Estilos Globales
-
-  * Paleta de colores basada en tonos azul oscuro y gris claro.
-  * Tipografía moderna sans-serif.
-  * Estructura basada en `ion-grid`, `ion-row`, `ion-col` para diseño responsivo.
-  * Menú inferior fijo con resaltado del tab activo.
-  * Encabezado superior uniforme con logo a la izquierda y botón de cierre de sesión a la derecha.
-
-## 10\. Autor
-
-  * **Desarrollado por:** Nicolás Plaza
-  * **Frameworks utilizados:** Ionic, Angular
-
-=======
 Durante el desarrollo del proyecto surgieron distintos desafíos técnicos que aportaron una comprensión más profunda del entorno Ionic Angular y de las buenas prácticas de desarrollo frontend.
 
   * **Gestión de Componentes Standalone:**
@@ -196,8 +143,3 @@ El proyecto puede ejecutarse directamente con el comando:
 
 ```bash
 ionic serve
-<<<<<<< HEAD
-```
-=======
-```
->>>>>>> af1bd3c6c43188690d3a1b17b9623bbdfed17489

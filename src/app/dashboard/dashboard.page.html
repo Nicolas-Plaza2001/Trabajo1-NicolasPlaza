@@ -5,12 +5,15 @@
     </ion-buttons>
     <ion-title>AssetFlow</ion-title>
     <ion-buttons slot="end">
-      <ion-button color="primary" fill="outline" (click)="logout()">Cerrar sesión</ion-button>
+      <ion-button color="primary" fill="outline" (click)="logout()">
+        Cerrar sesión
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
+
   <h2 class="titulo-bienvenida">Bienvenido de vuelta!</h2>
 
   <div class="tabla-seccion">
@@ -33,6 +36,7 @@
     </div>
   </div>
 
+
   <div class="tabla-seccion">
     <h3>Últimos equipos devueltos</h3>
     <div class="tabla">
@@ -52,7 +56,32 @@
       </table>
     </div>
   </div>
+
+
+  <div class="tabla-seccion">
+    <h3>Usuarios registrados</h3>
+    <div class="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre completo</th>
+            <th>Correo</th>
+            <th>Departamento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of usuariosRegistrados">
+            <td>{{ u.nombre }}</td>
+            <td>{{ u.correo }}</td>
+            <td>{{ u.departamento }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 </ion-content>
+
 
 <ion-footer>
   <ion-toolbar>
